@@ -1,6 +1,10 @@
 // http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
-export const luminance = color => {
+export const luminance = (color = "ffffff") => {
   let RsRGB, GsRGB, BsRGB, R, G, B
+
+  if (color.length === 0) {
+    color = "ffffff"
+  }
 
   // Validate hex color
   color = String(color).replace(/[^0-9a-f]/gi, "")
